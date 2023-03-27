@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MagicVillaAPI.Controllers
 {
+    [Route("api/[controller]")]
     [ApiController]
-    [Route("api/VillaAPI")]
     public class VillaAPIController : ControllerBase
     {
         [HttpGet]
@@ -15,7 +15,6 @@ namespace MagicVillaAPI.Controllers
             new Villa{Id=2,Name="Beach View" }
             };
         }
-
     }
     
 }
