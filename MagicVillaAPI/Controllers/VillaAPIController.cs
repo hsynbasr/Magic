@@ -2,8 +2,7 @@
 using MagicVillaAPI.Models;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
-using MagicVillaAPI.Logging;
-using MagicVillaAPI.Services;
+
 
 namespace MagicVillaAPI.Controllers
 {
@@ -11,22 +10,18 @@ namespace MagicVillaAPI.Controllers
     [ApiController]
     public class VillaAPIController : ControllerBase
     {
-        private readonly ILogging _logger;
-        private readonly IMailService _mailService;
-
-        public VillaAPIController(ILogging logger, IMailService mailService)
+        
+        public VillaAPIController()
         {
-            _logger = logger;
-            _mailService = mailService;
+           
         }
 
 
         [HttpGet]
         public ActionResult<IEnumerable<VillaDTO>> GetVillas()
         {
-            //_logger.LogInformation("Get Villas requested!");
-            _logger.Log("Get Villas requested!");
-            _mailService.Send("Getting Villas...", "GET ALL");
+            
+         
             return Ok(VillaStore.villaList);
         }
         
@@ -46,7 +41,7 @@ namespace MagicVillaAPI.Controllers
             {
                 return NotFound();
             }
-            _logger.Log("Getting A Villa requested");
+           
 
             return Ok(villa);
         }
