@@ -1,4 +1,4 @@
-﻿using MagicVillaAPI.Models;
+﻿using MagicVillaAPI.Models.DTO;
 
 namespace MagicVillaAPI.Data
 {

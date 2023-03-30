@@ -7,15 +7,15 @@ var builder = WebApplication.CreateBuilder(args);
 
 //Add services to the container.
 
-
-
 builder.Services.AddControllers().AddNewtonsoftJson();
+
+
 builder.Services.AddDbContext<AplicationDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultSQLConnection")));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+    
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-    
 
 
 var app = builder.Build();

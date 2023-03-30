@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MagicVillaAPI.Models
+namespace MagicVillaAPI.Models.DTO
 {
 
     public class VillaDTO
